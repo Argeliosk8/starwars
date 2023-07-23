@@ -12,7 +12,18 @@ function CharacterCard({character}){
 
         function handleFavoriteClick(e, character){
             e.preventDefault()
-            store.setFavoriteCharacters([...store.favoriteCharacters, character])
+            if(store.favoriteCharacters.includes(character)){     
+                const newFavorites = store.favoriteCharacters.filter(favorite => favorite.uid != character.uid)
+                store.setFavoriteCharacters(newFavorites) 
+                //e.target.textContent = "favorite"; 
+                e.target.style.color = 'black'      
+                
+            } else {
+                store.setFavoriteCharacters([...store.favoriteCharacters, character]) 
+                //e.target.textContent = "done"; 
+                e.target.style.color = 'red'            
+            }
+            
         }
         return(
         <Container id='card'>
