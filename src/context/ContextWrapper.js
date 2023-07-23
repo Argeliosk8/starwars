@@ -1,20 +1,22 @@
-import React, { useState } from "react";
-import { AppContext } from "./AppContext";
+import React, { useState, createContext } from "react";
 
-export const ContextWrapper = (props)=> {
-    const [store, setStore] = useState({
+export const AppContext = createContext();
+
+const initialState = {
         characters: [],
-        characterProfile: []
-    });
+        characterProfile: [],
+        characterDescription: '',
+        favoriteCharacters: []
+}
 
-    const [actions, setActions] = useState({
-        getCharacters: characters => setStore({...store, characters: characters}),
-        getCharacterProfile: profile => setStore({...store, characterProfile: profile})
-    });
-
+export const ContextWrapper = ({children})=> {
+    const [characters, setCharacters] = useState([]);
+    const [favoriteCharacters, setFavoriteCharacters] = useState([])
+    const [characterProfile, setCharacterProfile] = useState([])
+    
     return (
-        <AppContext.Provider value={{store, actions}}>
-            {props.children}
+        <AppContext.Provider value={{characters, setCharacters, favoriteCharacters, setFavoriteCharacters, characterProfile, setCharacterProfile}}>
+            {children}
         </AppContext.Provider>
-    )
+    )   
 }

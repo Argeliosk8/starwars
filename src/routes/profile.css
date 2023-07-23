@@ -1,0 +1,55 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.profileContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.profileHeader {
+    text-align: center;
+    border-bottom: solid gray;
+}
+
+.profileBody {
+    display: flex;
+    justify-content: start;
+    background-color: whitesmoke;
+    border-bottom: solid gray;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    margin-top: 25px;
+    
+}
+
+.infoContainer {
+    text-align: center;
+}
+
+.infoContainer div div {
+    border: dotted grey;
+}
+
+.imgContainer {
+    margin: 25px;
+}
+
+.descriptionContainer {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.descriptionContainer div {
+    border-style:  none !important;
+}

@@ -1,0 +1,21 @@
+#cardcontainer {
+    position: relative;
+    display: flex;
+    overflow: scroll;
+}
+
+#card {
+    min-width: 400px;
+    min-height: 300px;
+}
+.buttonsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropContainer a {
+    display: flex;
+    justify-content: space-between;
+}
+
