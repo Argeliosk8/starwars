@@ -11,17 +11,17 @@ function HomeNav(){
     
     const store = useContext(AppContext)
 
-    const deleteFavorite = (e, uid) => {
+    const deleteFavorite = (e, fav) => {
         e.preventDefault()
-        const newFavorites = store.favoriteCharacters.filter(favorite => favorite.uid != uid)
-        store.setFavoriteCharacters(newFavorites)
+        const newFavorites = store.favorites.filter(favorite => favorite !== fav)
+        store.setFavorites(newFavorites)
     }
     
     const renderOptions = ()=>{
-        return store.favoriteCharacters.map((character, key)=>{
+        return store.favorites.map((favorite, key)=>{
             return(
                 <>
-                <NavDropdown.Item key={key}><Link to={`/character/${character.uid}`}>{character.name}</Link><span onClick={(e)=>{deleteFavorite(e, character.uid)}} class="material-symbols-outlined">delete</span></NavDropdown.Item>
+                <NavDropdown.Item key={key}><Link to={`/${favorite.type}/${favorite.uid}`}>{favorite.name}</Link><span onClick={(e)=>{deleteFavorite(e, favorite)}} class="material-symbols-outlined">delete</span></NavDropdown.Item>
                 </>
                 
             )
@@ -37,7 +37,7 @@ function HomeNav(){
                 <Nav className="me-auto">                  
                 </Nav>
                 <Nav>
-                    <NavDropdown title={`Favorites (${store.favoriteCharacters.length})`} id="collasible-nav-dropdown" className="dropContainer">                        
+                    <NavDropdown title={`Favorites (${store.favorites.length})`} id="collasible-nav-dropdown" className="dropContainer">                        
                         {renderOptions()}                    
                     </NavDropdown>
                 </Nav>

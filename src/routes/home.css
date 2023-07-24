@@ -6,7 +6,7 @@
 
 #card {
     min-width: 400px;
-    min-height: 300px;
+    min-height: 200px;
 }
 .buttonsContainer {
     display: flex;
@@ -19,3 +19,9 @@
     justify-content: space-between;
 }
 
+.titleContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}

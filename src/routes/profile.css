@@ -19,7 +19,7 @@
 
 .profileBody {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     background-color: whitesmoke;
     border-bottom: solid gray;
 }
